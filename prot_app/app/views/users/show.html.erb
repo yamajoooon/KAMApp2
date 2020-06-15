@@ -1,0 +1,29 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      
+      <h2>学生氏名：<%= @users.name%></h2>
+      <h3>学籍番号：<%= @users.GID%></h3>
+      
+      <p>メールアドレス：<%= @users.email%></p>
+
+    
+      <%if @users.id == @current_user.id%>
+        <%= link_to("編集","/users/#{@users.id}/edit")%>
+      <%end%>
+    </div>
+      <% @users.posts.each do |post|%>
+        <div class="posts-index-item">
+        
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+            <%= link_to("#{post.subject}"+" "+post.content+post.created_at.strftime('%Y/%m/%d'),"/posts/#{post.id}")
+            %>
+        </div>
+      </div>
+      <% end %>
+    
+  </div>
+</div>

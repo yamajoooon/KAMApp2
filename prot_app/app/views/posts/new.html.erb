@@ -1,0 +1,17 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">出席登録する</h1>
+   
+    <div class="form">
+      <div class="form-body">
+        <%= form_tag("/posts/create") do %>
+            <p>キーワード</p>
+            <textarea name="content"></textarea>
+            <p>科目</p>
+            <input type="text" name="subject">　
+            <input type="submit" value="投稿">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

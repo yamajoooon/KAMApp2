@@ -1,0 +1,18 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">ユーザー情報の編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <p>ユーザー名</p>
+        <%= form_tag("/users/#{@users.id}/update") do %>
+            <input name = "name" value = "<%=@users.name%>">
+            <p>学籍番号</p>
+            <input name = "GID" value = "<%=@users.GID%>">
+            <p>メールアドレス</p>
+            <input name = "email" value = "<%= @users.email%>">
+            <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

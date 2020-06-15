@@ -1,0 +1,21 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="post-user-name">
+        <%= link_to("#{@users.name}","/users/#{@users.id}")%>
+      </div>
+      <p>
+        <%= @posts.subject + @posts.content %>
+      </p>
+
+      <div class="post-time">
+        <%= @posts.created_at.strftime('%Y/%m/%d %H:%M:%S')%> 
+        
+      </div>
+      <div class="post-menus">
+        <%= link_to("編集", "/posts/#{@posts.id}/edit") %>
+        <%= link_to("削除", "/posts/#{@posts.id}/destroy",{method:"post"}) %>
+      </div>
+    </div>
+  </div>
+</div>
