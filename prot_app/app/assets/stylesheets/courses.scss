@@ -1,0 +1,104 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* courses/index ================================ */
+.courses-heading {
+    font-weight: 300;
+    margin: 60px 0 20px;
+    font-size: 48px;
+    color: #bcc8d4;
+  }
+  
+  .courses-index-item {
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    display: table;
+    width: 100%;
+  }
+  
+  .course-left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+  }
+  
+  .course-name a {
+    font-weight: 600;
+  }
+  
+  .course-name a:hover {
+    color: #3ecdc6;
+  }
+  
+  .course-left {
+    float: left;
+    width: 10%;
+  }
+  
+  .course-right {
+    width: 90%;
+    padding-left: 25px;
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  /*--------------new-----------*/
+  .users-form input {
+    margin-bottom: 15px;
+  }
+
+    /* main_course専用================================ */
+
+  .subject-item :hover {
+      color: #3ecdc6;
+  }
+
+  .subject-item {
+      font-size: x-large;
+      cursor: pointer
+  }
+
+
+    /*------------edit_member専用-------------------*/
+
+  .btn-square-little-rich {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #03A9F4;/*色*/
+    border: solid 1px #0f9ada;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+
+    
+      
+  }
+
+  .botton-position {
+
+    float: right;
+    color: #FFF;
+  }
+    .botton-position + * {
+      clear: both;;
+    }
+    
+    .btn-square-little-rich:active {
+      /*押したとき*/
+      border: solid 1px #03A9F4;
+      box-shadow: none;
+      text-shadow: none;
+    }
+
+  
+  
+    

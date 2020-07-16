@@ -1,0 +1,21 @@
+<div class="main courses-index">
+  <div class="container">
+    <h1 class="courses-heading">学生一覧</h1>
+    
+    <% @users.each do |user|%>
+      <div class="courses-index-item">
+        <div class="couese-right">
+          
+            <%= "#{user.GID}"+ " " + "#{user.name}"%>
+            <div class = 'botton-position'>
+                <div class='btn-square-little-rich'>
+                    <%= link_to("追加",action: 'add_user_to_group', controller:'courses', user_id: user.id, group_id: @courses.id)%>
+                </div>
+            </div>
+
+        </div>
+      </div>
+    
+    <% end%>
+  </div>
+</div>

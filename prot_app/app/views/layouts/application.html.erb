@@ -23,9 +23,11 @@
         
         <% if @current_user %>
           
-
           <li>
-            <%= link_to("科目作成","/users/create_subject")%>
+            <%= link_to("担当科目","/courses/index")%>
+          </li>
+          <li>
+            <%= link_to("新規グループ作成","/courses/new")%>
           </li>
           <li>
             <%= link_to("科目一覧","/users/main_subject")%>
@@ -37,7 +39,7 @@
             <%= link_to("出席情報一覧","/posts/index")%>
           </li>
           <li>
-            <%= link_to("新規投稿","/posts/new")%>
+            <%= link_to("新規出席","/posts/new")%>
           </li>
           <li>
             <%= link_to("学生一覧","/users/index")%>

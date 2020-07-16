@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def main_subject
     
+    
   end
 
   def keyword_subject

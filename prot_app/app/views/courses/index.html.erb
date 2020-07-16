@@ -1,0 +1,20 @@
+
+
+<div class="main courses-index">
+  <div class="container">
+    <h1 class="courses-heading">担当科目一覧</h1>
+    <% @courses.each do |course|%>
+        <div class="courses-index-item">
+            <div class="course-right">
+                <div class="subject-item">
+                    <p>
+                        <%= link_to("#{course.name}","/courses/#{course.id}",:style=>"font-size: x-large;") %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <%end%>
+    
+    
+  </div>
+</div>

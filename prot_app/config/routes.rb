@@ -25,6 +25,19 @@ Rails.application.routes.draw do
   post 'posts/:id/update' => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
 
+
+  get 'courses/index' => "courses#index"
+  #get 'courses/:id' => "courses#main"   この順番だとnewを呼び出すときにこのurlがよびだされる
+  get 'courses/new' => "courses#new"
+  post 'courses/create' => "courses#create"
+  get 'courses/:id' => "courses#main"
+  get 'courses/:id/edit_member' => "courses#edit_member"
+  get 'courses/:id/add_user_to_group' => "courses#add_user_to_group"
+  
+  get 'courses/:id/show_member' => "courses#show_member"
+  get 'courses/:id/edit_keyword' => "courses#edit_keyword"
+  post 'courses/:id/update_keyword' => "courses#update_keyword"
+  #post 'courses/:id/add_user_to_group' => "courses#add_user_to_group"
   #resources  :posts
   
   get '/' => "home#top"

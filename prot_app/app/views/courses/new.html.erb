@@ -1,0 +1,17 @@
+<div class="main courses-new">
+  <div class="container">
+    <div class="form-heading">新規グループ作成</div>
+      <div class="form courses-form">
+        <div class="form-body">
+          <%=form_tag("/courses/create") do %>
+              <p>科目名</p>
+              <input name = "name">
+              <p>担当教官名</p>
+              <input name = "tname">
+
+              <input type="submit" value="新規登録">
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

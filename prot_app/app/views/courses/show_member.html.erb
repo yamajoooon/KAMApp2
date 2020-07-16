@@ -1,0 +1,20 @@
+<div class="main courses-index">
+  <div class="container">
+    <h1 class="courses-heading">メンバー一覧</h1>
+        <h1>教科:<%= @courses.name%></h1>
+            <% @add_user_to_groups.each do |user|%>
+                <div class="courses-index-item">
+                    <div class="course-right">
+                        <div class="subject-item">
+                            <p>
+                                <%= "#{user.user.GID}" + " " +"#{user.user.name}" %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <%end%>
+    
+    
+
+  </div>
+</div>

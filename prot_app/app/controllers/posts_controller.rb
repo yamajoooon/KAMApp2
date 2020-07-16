@@ -5,13 +5,14 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order(created_at: :desc)
     #@users = User.find_by(id: @posts.user_id)
+    
   end
 
   def show
     @posts = Post.find_by(id: params[:id])
     @users = @posts.user
   end
-
+  
   def new
     
   end
