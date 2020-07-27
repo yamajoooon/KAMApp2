@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get 'courses/:id/show_member' => "courses#show_member"
   get 'courses/:id/edit_keyword' => "courses#edit_keyword"
   post 'courses/:id/update_keyword' => "courses#update_keyword"
+  get 'courses/:id/destroy' => "courses#destroy"
   #post 'courses/:id/add_user_to_group' => "courses#add_user_to_group"
   #resources  :posts
   

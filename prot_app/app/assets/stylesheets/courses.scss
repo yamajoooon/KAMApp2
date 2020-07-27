@@ -99,6 +99,32 @@
       text-shadow: none;
     }
 
+.sign-up-color{
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #0f9ada;
+  background: white;/*色*/
+  border: solid 1px#0f9ada;/*線色*/
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.sign-out-color{
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: white;
+  background: rgb(187, 4, 4);/*色*/
+  border: solid 1px#da0f0f;/*線色*/
+  border-radius: 4px;
+  /*box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);  */
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
   
   
     

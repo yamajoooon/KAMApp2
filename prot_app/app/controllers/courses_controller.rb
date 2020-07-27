@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
   def edit_member
     @users = User.all.order(created_at: :desc)
     @courses = Course.find_by(id: params[:id])
-    #@add_user_to_groups = AddUserToGroup.where(group_id: params[:id])
+    @add_user_to_groups = AddUserToGroup.where(group_id: params[:id]).pluck(:user_id)
   end
 
   def add_user_to_group
@@ -47,6 +47,15 @@ class CoursesController < ApplicationController
     @courses = Course.find_by(id: params[:id])
     @add_user_to_groups = AddUserToGroup.where(group_id: params[:id])
 
+  end
+
+  def destroy
+    @courses = Course.find_by(id: params[:id])
+    @add_user_to_groups = AddUserToGroup.find_by(user_id: params[:user_id], group_id: params[:group_id])
+    
+    @add_user_to_groups.destroy
+    flash[:notice] = "メンバーを削除しました"
+    redirect_to("/courses/#{@courses.id}/show_member")
   end
 
   def edit_keyword

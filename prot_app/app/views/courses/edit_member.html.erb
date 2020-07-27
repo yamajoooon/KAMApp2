@@ -1,6 +1,7 @@
 <div class="main courses-index">
   <div class="container">
     <h1 class="courses-heading">学生一覧</h1>
+    <h1>教科:<%= link_to("#{@courses.name}","/courses/#{@courses.id}",:style=>"font-size: 32px;")%></h1>
     
     <% @users.each do |user|%>
       <div class="courses-index-item">
@@ -8,10 +9,19 @@
           
             <%= "#{user.GID}"+ " " + "#{user.name}"%>
             <div class = 'botton-position'>
-                <div class='btn-square-little-rich'>
-                    <%= link_to("追加",action: 'add_user_to_group', controller:'courses', user_id: user.id, group_id: @courses.id)%>
-                </div>
+                    
+                        <%if @add_user_to_groups.include?(user.id)%>
+                            <p class = "sign-up-color">登録済み</p>
+                        <%else%>
+                            <div class='btn-square-little-rich'>
+                            <%= link_to("追加",action: 'add_user_to_group', controller:'courses', user_id: user.id, group_id: @courses.id)%>
+                            </div>
+                        <%end%> 
+                    
+                
             </div>
+            
+             
 
         </div>
       </div>
