@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     
   end
 
+
   def create
     @posts = Post.new(
       content: params[:content],
@@ -31,6 +32,7 @@ class PostsController < ApplicationController
       flash[:notice] = "キーワードが違います"
       render("/posts/new")
     end
+
     
   end
 

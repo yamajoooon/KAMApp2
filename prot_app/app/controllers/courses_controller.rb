@@ -31,6 +31,7 @@ class CoursesController < ApplicationController
 
   end
 
+
   def edit_member
     @users = User.all.order(created_at: :desc)
     @courses = Course.find_by(id: params[:id])
@@ -76,4 +77,42 @@ class CoursesController < ApplicationController
       redirect_to("/courses/#{@courses.id}/edit_keyword")
     end
   end
+
+
+
+
+  def courses_index
+    @add_user_to_groups = AddUserToGroup.where(user_id: session[:user_id])
+    
+  end
+
+  def new_atend
+    @courses = Course.find_by(id: params[:id])
+  end
+
+  def create_atend
+    @courses = Course.find_by(id: params[:id])
+
+    @posts = Post.new(
+      content: params[:keyword],
+      user_id: @current_user.id,
+      subject: @courses.name
+    )
+
+    if @posts.content == @courses.keyword
+      @posts.save
+      flash[:notice] = "出席完了"
+      redirect_to("/posts/index")
+    else
+      flash[:notice] = "キーワードが違います"
+      redirect_to("/courses/#{@courses.id}/new_atend")
+    end
+
+  end
+
 end
+
+#------------------------------出席登録------------------------------------
+
+
+  

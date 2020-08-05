@@ -16,20 +16,24 @@ class UsersController < ApplicationController
     
   end
 
-  def create_subject
+  # def create_subject
 
-  end
+  # end
 
-  def main_subject
+  # def main_subject
     
     
-  end
+  # end
 
-  def keyword_subject
+  # def keyword_subject
     
-  end
+
+  # end
 
   #---------------- --------------------------------------------
+
+
+
   def login_form
     
   end
@@ -40,7 +44,7 @@ class UsersController < ApplicationController
     if @users
       session[:user_id] = @users.id
       flash[:notice] = "ログインしました！"
-      redirect_to("/posts/index")
+      redirect_to("/users/#{@users.id}")
     else
       @error_message = "メールアドレスまたはパスワードに問題があります"
       @email = params[:email]

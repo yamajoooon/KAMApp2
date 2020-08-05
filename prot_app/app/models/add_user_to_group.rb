@@ -12,5 +12,9 @@ class AddUserToGroup < ApplicationRecord
     def user
       return User.find_by(id: self.user_id)
     end
+
+    def courses
+      return Course.find_by(id: self.group_id)
+    end
     
 end

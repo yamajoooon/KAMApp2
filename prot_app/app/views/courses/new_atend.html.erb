@@ -1,0 +1,16 @@
+<div class="main courses-new">
+  <div class="container">
+    <h1 class="form-heading">出席登録する</h1>
+    <h1>教科:<%= @courses.name%></h1>
+    <div class="form">
+      <div class="form-body">
+        <%= form_tag("/courses/#{@courses.id}/create_atend") do %>
+            <p>キーワード</p>
+            <input type="text" name="keyword">　
+            <input type="submit" value="投稿">
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>

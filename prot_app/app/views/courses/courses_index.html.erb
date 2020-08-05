@@ -1,0 +1,19 @@
+<div class="main courses-index">
+  <div class="container">
+    <h1 class="courses-heading">履修科目一覧</h1>
+    
+
+
+    <% @add_user_to_groups.each do |group|%>
+      <div class="courses-index-item">
+        <div class="course-right">
+            <div class="subject-item">
+              <%= link_to("#{group.courses.name}","/courses/#{group.courses.id}/new_atend",:style=>"font-size: x-large;")%> 
+            </div>
+                <%= "担当教官：#{group.courses.tname}" %>
+        </div>
+      </div>
+    <% end%>  
+
+  </div>
+</div>
