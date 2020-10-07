@@ -9,20 +9,14 @@
           
             <%= "#{user.GID}"+ " " + "#{user.name}"%>
             <div class = 'botton-position'>
-                    
-                        <%if @add_user_to_groups.include?(user.id)%>
-                            <p class = "sign-up-color">登録済み</p>
-                        <%else%>
-                            <div class='btn-square-little-rich'>
-                            <%= link_to("追加",action: 'add_user_to_group', controller:'courses', user_id: user.id, group_id: @courses.id)%>
-                            </div>
-                        <%end%> 
-                    
-                
+                <%if @add_user_to_groups.include?(user.id)%>
+                    <p class = "sign-up-color">登録済み</p>
+                <%else%>
+                    <div class='btn-square-little-rich'>
+                      <%= link_to("追加",action: 'add_user_to_group', controller:'courses', user_id: user.id, group_id: @courses.id)%>
+                    </div>
+                <%end%> 
             </div>
-            
-             
-
         </div>
       </div>
     
