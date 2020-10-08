@@ -79,7 +79,7 @@ class CoursesController < ApplicationController
   end
 
 
-
+#------------------------------出席登録------------------------------------
 
   def courses_index
     @add_user_to_groups = AddUserToGroup.where(user_id: session[:user_id])
@@ -110,9 +110,17 @@ class CoursesController < ApplicationController
 
   end
 
+  #------------------------------授業時間登録------------------------------------
+
+  def new_time
+    @courses = Course.find_by(id: params[:id])
+  end
+
+
+
 end
 
-#------------------------------出席登録------------------------------------
+
 
 
   

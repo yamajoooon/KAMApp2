@@ -1,0 +1,2 @@
+class AddCourseTime < ApplicationRecord
+end

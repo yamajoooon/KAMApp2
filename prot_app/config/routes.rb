@@ -46,6 +46,8 @@ Rails.application.routes.draw do
   get 'courses/:id/destroy' => "courses#destroy"
   #post 'courses/:id/add_user_to_group' => "courses#add_user_to_group"
   #resources  :posts
+
+  get 'courses/:id/new_time' => "courses#new_time"
   
   get '/' => "home#top"
   get 'about' => "home#about"
