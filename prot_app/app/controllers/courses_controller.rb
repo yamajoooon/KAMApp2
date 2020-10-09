@@ -114,6 +114,12 @@ class CoursesController < ApplicationController
 
   def new_time
     @courses = Course.find_by(id: params[:id])
+
+  end
+
+  def show_time
+    @courses = Course.find_by(id: params[:id])
+    @add_courses_time = AddCourseTime.where(course_id: params[:id])
   end
 
 

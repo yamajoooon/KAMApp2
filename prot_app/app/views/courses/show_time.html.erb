@@ -1,0 +1,27 @@
+<div class="main courses-index">
+  <div class="container">
+    <h1 class="courses-heading">授業日</h1>
+        <h1>教科:<%= link_to("#{@courses.name}","/courses/#{@courses.id}",:style=>"font-size: 32px;")%></h1>
+            <% @add_courses_time.each do |time|%>
+                <div class="courses-index-item">
+                    <div class="course-right">
+                            
+                        <%= "#{time.held_day}" + " "+ "#{time.held_hour}限"%>
+                    
+                        <div class = 'botton-position'>
+                                
+                            <div class='sign-out-color'>
+                                <%= "削除"%>
+                                <%
+=begin%>
+ <%= link_to("削除",action: 'destroy', controller:'courses',user_id: user.user_id, group_id: user.group_id)%> 
+<%
+=end%>
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
+            <%end%>
+  </div>
+</div>

@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   #resources  :posts
 
   get 'courses/:id/new_time' => "courses#new_time"
+  get 'courses/:id/show_time' => "courses#show_time"
   
   get '/' => "home#top"
   get 'about' => "home#about"
