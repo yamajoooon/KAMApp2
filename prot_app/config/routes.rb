@@ -49,6 +49,8 @@ Rails.application.routes.draw do
 
   get 'courses/:id/new_time' => "courses#new_time"
   get 'courses/:id/show_time' => "courses#show_time"
+  post 'courses/:id/create_time' => "courses#create_time"
+  get 'courses/:id/destroy_time' => "courses#destroy_time"
   
   get '/' => "home#top"
   get 'about' => "home#about"

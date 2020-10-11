@@ -4,11 +4,11 @@
         <h1>教科<%= link_to("#{@courses.name}","/courses/#{@courses.id}",:style=>"font-size: 32px;")%></h1>
             <div class="form courses-form">
                 <div class="form-body">
-                <%=form_tag("/courses/create") do %>
+                <%=form_tag("/courses/#{@courses.id}/create_time") do %>
                     <p>授業日(例：2020年1月1日　→　"2020-01-01")</p>
-                    <input name = "name">
+                    <input name = "held_day">
                     <p>授業開始時(例： 1時間目,一限　→　1)</p>
-                    <input name = "tname">
+                    <input name = "held_hour">
 
                     <input type="submit" value="新規登録">
                 <% end %>

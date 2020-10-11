@@ -11,12 +11,8 @@
                         <div class = 'botton-position'>
                                 
                             <div class='sign-out-color'>
-                                <%= "削除"%>
-                                <%
-=begin%>
- <%= link_to("削除",action: 'destroy', controller:'courses',user_id: user.user_id, group_id: user.group_id)%> 
-<%
-=end%>
+                                <%= link_to("削除",action: 'destroy_time', controller:'courses',destroy_time: time.id)%>
+                                
                             </div>
                                 
                         </div>

@@ -122,6 +122,37 @@ class CoursesController < ApplicationController
     @add_courses_time = AddCourseTime.where(course_id: params[:id])
   end
 
+  def create_time
+    @courses = Course.find_by(id: params[:id])
+
+    @add_courses_time = AddCourseTime.new(
+      held_day: params[:held_day],
+      held_hour: params[:held_hour],
+      course_id: @courses.id
+    )
+
+    if @add_courses_time.held_day.present? && @add_courses_time.held_hour.present?
+      @add_courses_time.save
+      flash[:notice] = "#{@add_courses_time.held_day}登録"
+      redirect_to("/courses/#{@courses.id}/new_time")
+    else
+      flash[:notice] = "授業日または授業開始時が入力されてません"
+      redirect_to("/courses/#{@courses.id}/new_time")
+    end
+
+    
+  end
+
+  def destroy_time
+
+    @courses = Course.find_by(id: params[:id])
+    @add_course_times = AddCourseTime.find_by(id: params[:destroy_id])
+    
+    @add_course_times.destroy
+    flash[:notice] = "授業日を削除しました"
+    redirect_to("/courses/#{@courses.id}/show_time")
+  end
+
 
 
 end
