@@ -146,10 +146,15 @@ class CoursesController < ApplicationController
   def destroy_time
 
     @courses = Course.find_by(id: params[:id])
-    @add_course_times = AddCourseTime.find_by(id: params[:destroy_id])
+    @add_course_times = AddCourseTime.find_by(
+      held_day: params[:held_day], 
+      held_hour: params[:held_hour],
+      course_id: params[:course_id]
+    )
     
+    flash[:notice] = "#{@add_course_times.held_day}分を削除しました"
     @add_course_times.destroy
-    flash[:notice] = "授業日を削除しました"
+    # flash[:notice] = "授業日を削除しました"
     redirect_to("/courses/#{@courses.id}/show_time")
   end
 
