@@ -1,0 +1,14 @@
+<div class="main courses-index">
+  <div class="container">
+    <h1 class="courses-heading">出席一覧</h1>
+        <h1><%= link_to("#{@held_day}分出席リスト","/courses/#{@courses.id}/show_time",:style=>"font-size: 32px;")%></h1>
+        <%@today_atend.each do |atend| %>
+        <div class="courses-index-item">
+            <div class="course-right">
+                <%= "#{atend.user.name}" +"  " +"#{atend.created_at.strftime('%H:%M')}"%>
+            </div>
+        </div>
+        <% end%>
+
+  </div>
+</div>

@@ -5,9 +5,14 @@
             <% @add_courses_time.each do |time|%>
                 <div class="courses-index-item">
                     <div class="course-right">
-                            
-                        <%= "#{time.held_day}" + " "+ "#{time.held_hour}限"%>
-                    
+                        <div class="subject-item"> 
+                            <p>
+                                <%= link_to("#{time.held_day}" + " "+ "#{time.held_hour}限",
+                                    "/courses/#{@courses.id}/#{time.held_day}",
+                                    :style=>"font-size: x-large;"
+                                )%>
+                            </p>
+                        </div>
                         <div class = 'botton-position'>
                                 
                             <div class='sign-out-color'>

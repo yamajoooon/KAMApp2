@@ -2,24 +2,19 @@
   <div class="container">
     <h1 class="courses-heading">メンバー一覧</h1>
         <h1>教科:<%= link_to("#{@courses.name}","/courses/#{@courses.id}",:style=>"font-size: 32px;")%></h1>
-            <% @add_user_to_groups.each do |user|%>
-                <div class="courses-index-item">
-                    <div class="course-right">
-                            
+        <% @add_user_to_groups.each do |user|%>
+            <div class="courses-index-item">
+                <div class="course-right">
                         <%= "#{user.user.GID}" + " " +"#{user.user.name}" %>
-                    
-                        <div class = 'botton-position'>
-                                
-                            <div class='sign-out-color'>
-                                <%= link_to("削除",action: 'destroy', controller:'courses',user_id: user.user_id, group_id: user.group_id)%>
-                            </div>
-                                
+                    <div class = 'botton-position'>
+                            
+                        <div class='sign-out-color'>
+                            <%= link_to("削除",action: 'destroy', controller:'courses',user_id: user.user_id, group_id: user.group_id)%>
                         </div>
+                            
                     </div>
                 </div>
-            <%end%>
-    
-    
-
+            </div>
+        <%end%>
   </div>
 </div>

@@ -51,6 +51,8 @@ Rails.application.routes.draw do
   get 'courses/:id/show_time' => "courses#show_time"
   post 'courses/:id/create_time' => "courses#create_time"
   get 'courses/:id/destroy_time' => "courses#destroy_time"
+
+  get 'courses/:id/:held_day' => "courses#show_atend"
   
   get '/' => "home#top"
   get 'about' => "home#about"

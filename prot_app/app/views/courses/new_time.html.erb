@@ -1,7 +1,7 @@
 <div class="main users-new">
     <div class ="container">
         <div class="form-heading">授業日設定</div>
-        <h1>教科<%= link_to("#{@courses.name}","/courses/#{@courses.id}",:style=>"font-size: 32px;")%></h1>
+        <h1>教科:<%= link_to("#{@courses.name}","/courses/#{@courses.id}",:style=>"font-size: 32px;")%></h1>
             <div class="form courses-form">
                 <div class="form-body">
                 <%=form_tag("/courses/#{@courses.id}/create_time") do %>
