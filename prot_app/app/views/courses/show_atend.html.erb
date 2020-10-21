@@ -2,13 +2,40 @@
   <div class="container">
     <h1 class="courses-heading">出席一覧</h1>
         <h1><%= link_to("#{@held_day}分出席リスト","/courses/#{@courses.id}/show_time",:style=>"font-size: 32px;")%></h1>
-        <%@today_atend.each do |atend| %>
+        <%
+=begin%>
+ 
+ <%@today_atend.each do |atend| %>
         <div class="courses-index-item">
             <div class="course-right">
                 <%= "#{atend.user.name}" +"  " +"#{atend.created_at.strftime('%H:%M')}"%>
             </div>
         </div>
-        <% end%>
+        <% end%>  
+<%
+=end%>
+            <div class = "fig-main">
+                <table border="1" cellpadding="10">
+                    <tr>
+                    <th bgcolor="orange">学籍番号</th>
+                    <th bgcolor="green" width="30%">名前</th>
+                    <div class="daycolor">
+                        <th><%= "#{@held_day}"%></th>
+                    </div>
+                    </tr>
+                    <div class = "tableRow"> 
+                        <%@today_atend.each do |atend| %>
+                        <tr align="center">
+                            <td><%= "#{atend.user.GID}"%></td>
+                            <td><%= "#{atend.user.name}"%></td>
+                            <td><%= "#{atend.created_at.strftime('%H:%M')}"%></td>
+                        </tr>
+                        <% end %>
+                    </div>
+                    
+                    
+                </table>
+            </div>
 
   </div>
 </div>
