@@ -163,6 +163,8 @@ class CoursesController < ApplicationController
     @courses = Course.find_by(id: params[:id])
     @held_day = params[:held_day]
     @today_atend = Post.where(subject: @courses.name, created_at: params[:held_day].in_time_zone.all_day)
+
+    @add_user_to_groups = AddUserToGroup.where(group_id: params[:id]).all.order("id DESC")
   end
 
 

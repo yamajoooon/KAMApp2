@@ -2,18 +2,6 @@
   <div class="container">
     <h1 class="courses-heading">出席一覧</h1>
         <h1><%= link_to("#{@held_day}分出席リスト","/courses/#{@courses.id}/show_time",:style=>"font-size: 32px;")%></h1>
-        <%
-=begin%>
- 
- <%@today_atend.each do |atend| %>
-        <div class="courses-index-item">
-            <div class="course-right">
-                <%= "#{atend.user.name}" +"  " +"#{atend.created_at.strftime('%H:%M')}"%>
-            </div>
-        </div>
-        <% end%>  
-<%
-=end%>
             <div class = "fig-main">
                 <table border="1" cellpadding="10">
                     <tr>
@@ -23,15 +11,18 @@
                         <th><%= "#{@held_day}"%></th>
                     </div>
                     </tr>
-                    <div class = "tableRow"> 
-                        <%@today_atend.each do |atend| %>
-                        <tr align="center">
-                            <td><%= "#{atend.user.GID}"%></td>
-                            <td><%= "#{atend.user.name}"%></td>
-                            <td><%= "#{atend.created_at.strftime('%H:%M')}"%></td>
-                        </tr>
-                        <% end %>
-                    </div>
+                <% @add_user_to_groups.each do |user|%>
+                    <tr align="center">
+                        <td><%= "#{user.user.GID}"%></td>
+                        <td><%= "#{user.user.name}"%></td>
+                        <% if @today_atend.pluck(:user_id).include?(user.user.id)%>
+                            <td><%= "#{@today_atend.find_by(user_id: user.user.id).created_at.strftime('%H:%M')}"%></td>
+                        <%else%>
+                            <td>×</td>
+                        <%end%>
+                        
+                    </tr>
+                <%end%>
                     
                     
                 </table>
