@@ -7,7 +7,8 @@
                     <div class="course-right">
                         <div class="subject-item"> 
                             <p>
-                                <%= link_to("#{time.held_day}" + " "+ "#{time.held_hour}限",
+                                <%= link_to(
+                                    "#{time.held_day}" + " "+ "#{time.held_hour}限",
                                     "/courses/#{@courses.id}/#{time.held_day}",
                                     :style=>"font-size: x-large;"
                                 )%>

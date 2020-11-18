@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  held_hour: 1
+  start_time: MyString
+  late_time: MyString
+
+two:
+  held_hour: 1
+  start_time: MyString
+  late_time: MyString

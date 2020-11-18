@@ -1,0 +1,2 @@
+class HeldCourseHour < ApplicationRecord
+end
