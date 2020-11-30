@@ -79,10 +79,16 @@ class CoursesController < ApplicationController
   end
 
 
-#------------------------------出席登録------------------------------------
+#------------------------------出席登録状況確認------------------------------------
 
   def courses_index
     @add_user_to_groups = AddUserToGroup.where(user_id: session[:user_id])
+    
+  end
+
+  def show_status
+    @courses = Course.find_by(id: params[:id])
+    @add_courses_time = AddCourseTime.where(course_id: params[:id])
     
   end
 

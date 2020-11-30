@@ -8,7 +8,18 @@
             <div class="subject-item">
               <%= link_to("#{group.courses.name}","/courses/#{group.courses.id}/new_atend",:style=>"font-size: x-large;")%> 
             </div>
-                <%= "担当教官：#{group.courses.tname}" %>
+            <%= "担当教官：#{group.courses.tname}" %>
+            <div class = "botton-position">
+              
+              <%= link_to("/courses/#{group.courses.id}/new_atend") do%>
+                <button class="btn-atend" >出席登録</button>
+              <%end%>
+
+              <%= link_to("/courses/#{group.courses.id}/show_status") do%>
+                <button class="btn-mystatus" >状況確認</button>
+              <%end%>
+
+            </div>
         </div>
       </div>
     <% end%>  

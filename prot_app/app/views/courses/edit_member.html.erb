@@ -12,9 +12,11 @@
                 <%if @add_user_to_groups.include?(user.id)%>
                     <p class = "sign-up-color">登録済み</p>
                 <%else%>
-                    <div class='btn-square-little-rich'>
-                      <%= link_to("追加",action: 'add_user_to_group', controller:'courses', user_id: user.id, group_id: @courses.id)%>
-                    </div>
+                    
+                      <%= link_to(action: 'add_user_to_group', controller:'courses', user_id: user.id, group_id: @courses.id) do%>
+                          <button class="btn-square-little-rich" >追加する</button>
+                      <%end%>
+
                 <%end%> 
             </div>
         </div>

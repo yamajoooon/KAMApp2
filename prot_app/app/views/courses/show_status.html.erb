@@ -1,0 +1,29 @@
+<div class="main courses-new">
+  <div class="container">
+    <h1 class="form-heading">出席状況確認</h1>
+    <h1>教科:<%= @courses.name%></h1>
+    <div class="form">
+        <div class = "fig-main">
+                <table border="1" cellpadding="10">
+                    <tr>
+                        <th bgcolor="orange">日にち</th>
+                        <th bgcolor="green" width="30%">出席</th>
+                    　　 <th bgcolor="green" width="60%">出席時間</th>
+                    </tr>
+         
+                    <%  @add_courses_time.each do |time|%>
+                        <tr align="center">
+                            <td><%="#{time.held_day}" + " "+ "#{time.held_hour}限"%></td>
+                            <td>○</td>
+                            <td>12:00</td>
+                        </tr>
+                    <% end %>  
+
+                </table>
+                
+            </div>
+      
+
+    </div>
+  </div>
+</div>

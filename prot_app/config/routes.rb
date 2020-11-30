@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   get 'courses/index' => "courses#index"
   get 'courses/courses_index' => "courses#courses_index"
+  get 'courses/:id/show_status' => "courses#show_status"
+  
   #get 'courses/:id' => "courses#main"   この順番だとnewを呼び出すときにこのurlがよびだされる
   get 'courses/new' => "courses#new"
   post 'courses/create' => "courses#create"
