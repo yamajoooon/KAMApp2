@@ -4,7 +4,7 @@
     <h1>教科:<%= @courses.name%></h1>
     <div class="form">
         <div class = "fig-main">
-               <%= @atend_time.where(created_at: '2020-10-13'.in_time_zone.all_day).pluck(:created_at)%>
+
                 <table border="1" cellpadding="10">
                     <tr>
                         <th bgcolor="orange">日にち</th>
@@ -15,9 +15,22 @@
                     <%  @add_courses_time.each do |time|%>
                         <tr align="center">
                             <td><%="#{time.held_day}" + " "+ "#{time.held_hour}限"%></td>
-                            <td>○</td>
                             <% if @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day)%>
-                                <td>○</td>
+                            
+                                <% if @held_course_hour.find_by(held_hour: time.held_hour).start_time >= @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day).created_at.strftime('%H%M%S')%>
+                                    <td>○</td>
+                                <% elsif @held_course_hour.find_by(held_hour: time.held_hour).late_time >=  @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day).created_at.strftime('%H%M%S')%>
+                                    <td>△</td>
+                                <% else%>
+                                    <td>×</td>
+                                <% end %>
+                            
+                            <% else %>
+                                <td>×</td>
+                            <% end %>
+
+                            <%if @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day)%>
+                                <td><%= @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day).created_at.strftime('%H:%M')%></td>
                             <% else%>
                                 <td>×</td>
                             <%end%>

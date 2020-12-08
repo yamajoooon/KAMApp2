@@ -90,6 +90,10 @@ class CoursesController < ApplicationController
     @courses = Course.find_by(id: params[:id])
     @add_courses_time = AddCourseTime.where(course_id: params[:id])
 
+    @held_course_hour = HeldCourseHour.all
+
+
+
     @atend_time = Post.where(user_id: session[:user_id], subject: @courses.name )
   end
 
