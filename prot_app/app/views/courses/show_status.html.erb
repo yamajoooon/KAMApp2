@@ -16,10 +16,10 @@
                         <tr align="center">
                             <td><%="#{time.held_day}" + " "+ "#{time.held_hour}限"%></td>
                             <% if @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day)%>
-                            
-                                <% if @held_course_hour.find_by(held_hour: time.held_hour).start_time >= @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day).created_at.strftime('%H%M%S')%>
+                            <% @Atend = @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day).created_at - (60 * @self_late_minute) %>
+                                <% if @held_course_hour.find_by(held_hour: time.held_hour).start_time >= @Atend.strftime('%H%M%S')%>
                                     <td>○</td>
-                                <% elsif @held_course_hour.find_by(held_hour: time.held_hour).late_time >=  @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day).created_at.strftime('%H%M%S')%>
+                                <% elsif @held_course_hour.find_by(held_hour: time.held_hour).late_time >=  @Atend.strftime('%H%M%S') %>
                                     <td>△</td>
                                 <% else%>
                                     <td>×</td>

@@ -92,9 +92,11 @@ class CoursesController < ApplicationController
 
     @held_course_hour = HeldCourseHour.all
 
-
-
     @atend_time = Post.where(user_id: session[:user_id], subject: @courses.name )
+
+    @self_late_minute = @courses.late_minute 
+
+    @Atend
   end
 
   def new_atend
