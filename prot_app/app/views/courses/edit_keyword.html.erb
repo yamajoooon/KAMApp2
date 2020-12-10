@@ -1,12 +1,12 @@
 <div class="main users-new">
     <div class ="container">
-        <div class="form-heading">出席一覧</div>
+        <div class="form-heading">キーワード設定</div>
         <h1>教科:<%= @courses.name%></h1>
             <div class="form users-form">
                 <div class="form-body">
                     <%= form_tag("/courses/#{@courses.id}/update_keyword") do %> 
                         <p>キーワード設定</p>
-                        <input name = "keyword">
+                        <input name = "keyword" value = "<%= @courses.keyword%>">
                         <input type="submit" value="変更">
                     <% end%>  
                 </div>

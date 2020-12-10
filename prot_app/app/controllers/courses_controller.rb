@@ -18,7 +18,8 @@ class CoursesController < ApplicationController
     @courses = Course.new(
       name: params[:name],
       tname: params[:tname],
-      admin_user_id: @current_user.id
+      admin_user_id: @current_user.id,
+      late_minute: 30
     )
 
     if @courses.name.present? and @courses.tname.present?
@@ -180,6 +181,26 @@ class CoursesController < ApplicationController
     @add_user_to_groups = AddUserToGroup.where(group_id: params[:id]).all.order("id DESC")
   end
 
+  #-----------------------------コースパラメータ設定----------------------------------
+  def edit_courseparam
+    @courses = Course.find_by(id: params[:id])
+  end
+
+  def update_courseparam
+    @courses = Course.find_by(id: params[:id])
+    @courses.name = params[:name]
+    @courses.tname = params[:tname]
+    @courses.late_minute = params[:late_minute]
+
+    if @courses.name.present? && @courses.tname.present? && @courses.late_minute.present?
+      @courses.save
+      flash[:notice] = "コース設定を変更しました"
+      redirect_to("/courses/#{@courses.id}")
+    else
+      flash[:notice] = "必ず全項目を入力してください"
+      redirect_to("/courses/#{@courses.id}/edit_courseparam")
+    end
+  end
 
 end
 

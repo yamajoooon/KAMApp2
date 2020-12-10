@@ -6,6 +6,9 @@
                 <div class="form-body">
                     <div class="subject-item">
                         <p>
+                            <%= link_to("keyword設定","/courses/#{@courses.id}/edit_keyword",:style=>"font-size: x-large;")%>
+                        </p>
+                        <p>
                             <%= link_to("出席状況","/users/atend_subject",:style=>"font-size: x-large;")%>
                         </p>
                         <p>
@@ -21,7 +24,7 @@
                             <%= link_to("授業日確認・編集","/courses/#{@courses.id}/show_time",:style=>"font-size: x-large;")%>
                         </p>
                         <p>
-                            <%= link_to("keyword設定","/courses/#{@courses.id}/edit_keyword",:style=>"font-size: x-large;")%>
+                            <%= link_to("各種設定","/courses/#{@courses.id}/edit_courseparam",:style=>"font-size: x-large;")%>
                         </p>
                     </div>
                 </div>

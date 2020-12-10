@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get 'courses/index' => "courses#index"
   get 'courses/courses_index' => "courses#courses_index"
   get 'courses/:id/show_status' => "courses#show_status"
-  
+
   #get 'courses/:id' => "courses#main"   この順番だとnewを呼び出すときにこのurlがよびだされる
   get 'courses/new' => "courses#new"
   post 'courses/create' => "courses#create"
@@ -48,6 +48,9 @@ Rails.application.routes.draw do
   get 'courses/:id/destroy' => "courses#destroy"
   #post 'courses/:id/add_user_to_group' => "courses#add_user_to_group"
   #resources  :posts
+
+  get 'courses/:id/edit_courseparam' => "courses#edit_courseparam"
+  post 'courses/:id/update_courseparam' => "courses#update_courseparam"
 
   get 'courses/:id/new_time' => "courses#new_time"
   get 'courses/:id/show_time' => "courses#show_time"

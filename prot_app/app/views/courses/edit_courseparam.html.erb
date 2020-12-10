@@ -1,0 +1,24 @@
+<div class="main users-new">
+    <div class ="container">
+        <div class="form-heading">各種設定</div>
+        <h1>教科:<%= @courses.name%></h1>
+            <div class="form users-form">
+                <div class="form-body">
+                    
+                    <%= form_tag("/courses/#{@courses.id}/update_courseparam") do %>  
+
+                        <p>教科名(全角)</p>
+                        <input name = "name" value = "<%= @courses.name%>">
+                        <p>担当教員</p>
+                        <input name = "tname" value = "<%= @courses.tname%>">
+                        <p>遅刻許容時間(半角数字)</p>
+                        <input name = "late_minute" value = "<%= @courses.late_minute%>">
+                        <input type="submit" value="変更">
+
+                    <%end%>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
