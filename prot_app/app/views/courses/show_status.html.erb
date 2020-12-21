@@ -2,6 +2,10 @@
   <div class="container">
     <h1 class="form-heading">出席状況確認</h1>
     <h1>教科:<%= @courses.name%></h1>
+    <% 
+        @lateAtend = 0
+        @notAtend = 0
+    %>
     <div class="form">
         <div class = "fig-main">
 
@@ -11,7 +15,7 @@
                         <th bgcolor="green" width="30%">出席</th>
                     　　 <th bgcolor="green" width="60%">出席時間</th>
                     </tr>
-         
+                    
                     <%  @add_courses_time.each do |time|%>
                         <tr align="center">
                             <td><%="#{time.held_day}" + " "+ "#{time.held_hour}限"%></td>
@@ -21,12 +25,15 @@
                                     <td>○</td>
                                 <% elsif @held_course_hour.find_by(held_hour: time.held_hour).late_time >=  @Atend.strftime('%H%M%S') %>
                                     <td>△</td>
+                                    <% @lateAtend = @lateAtend + 1 %>
                                 <% else%>
                                     <td>×</td>
+                                    <% @notAtend = @notAtend + 1%>
                                 <% end %>
                             
                             <% else %>
                                 <td>×</td>
+                                <% @notAtend = @notAtend + 1%>
                             <% end %>
 
                             <%if @atend_time.find_by(created_at: time.held_day.in_time_zone.all_day)%>
@@ -38,7 +45,10 @@
                     <% end %>  
 
                 </table>
-                
+                <div class = "sumAtend"> 
+                    <p><%="△: #{@lateAtend}"%></p>
+                    <p><%="×: #{@notAtend}"%></p>
+                </div>
             </div>
       
 

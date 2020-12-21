@@ -4,8 +4,10 @@
       
       <h2>学生氏名：<%= @users.name%></h2>
       <h3>学籍番号：<%= @users.GID%></h3>
+      <h3>クラス：<%= @users.classname%></h3>
       
       <p>メールアドレス：<%= @users.email%></p>
+
     
       <%if @users.id == @current_user.id%>
         <%= link_to("編集","/users/#{@users.id}/edit")%>

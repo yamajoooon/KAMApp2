@@ -72,7 +72,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @users = User.new(name: params[:name],email: params[:email],GID: params[:GID], password: params[:password])
+    @users = User.new(
+      name: params[:name],
+      email: params[:email],
+      classname: params[:classname],
+      GID: params[:GID], 
+      password: params[:password],
+    )
     if @users.save
       flash[:notice] = "ユーザー登録が完了しました"
       session[:user_id] = @users.id
@@ -91,6 +97,7 @@ class UsersController < ApplicationController
     @users.name = params[:name]
     @users.GID = params[:GID]
     @users.email = params[:email]
+    @users.classname = params[:classname]
     if @users.save
       flash[:notice] = "ユーザー情報変更完了！"
       redirect_to("/users/#{@users.id}")

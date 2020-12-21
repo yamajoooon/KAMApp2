@@ -98,6 +98,11 @@ class CoursesController < ApplicationController
     @self_late_minute = @courses.late_minute 
 
     @Atend
+
+    @notAtend 
+
+    @lateAtend 
+
   end
 
   def new_atend
