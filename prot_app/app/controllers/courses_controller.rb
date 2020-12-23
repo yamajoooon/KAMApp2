@@ -61,6 +61,7 @@ class CoursesController < ApplicationController
   end
 
   def edit_keyword
+    
     @courses = Course.find_by(id: params[:id])
   end
 

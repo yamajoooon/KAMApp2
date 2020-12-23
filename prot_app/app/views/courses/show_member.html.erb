@@ -5,7 +5,7 @@
         <% @add_user_to_groups.each do |user|%>
             <div class="courses-index-item">
                 <div class="course-right">
-                        <%= "#{user.user.GID}" + " " +"#{user.user.name}" %>
+                        <%= "#{user.user.GID}" + " "+ "#{user.user.classname}"+ " " +"#{user.user.name}" %>
                     <div class = 'botton-position'>
                             
                         <div class='sign-out-color'>

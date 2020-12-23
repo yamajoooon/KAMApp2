@@ -1,0 +1,32 @@
+<div class="main courses-index">
+  <div class="container">
+    <h1 class="courses-heading">クラスまとめて追加</h1>
+    <h1>教科:<%= link_to("#{@courses.name}","/courses/#{@courses.id}",:style=>"font-size: 32px;")%></h1>
+    
+    <% @department_index.each do |department|%>
+      <div class="courses-index-item">
+        <div class="couese-right">
+          
+            <%= "#{department.classname}"%>
+            <div class = 'botton-position'>
+                <%if @add_user_to_groups.include?(department.id) %>
+                    <p class = "sign-up-color">登録済み</p>
+                <%else%>
+                    <%= link_to(
+                        action: 'add_department_to_group', 
+                        controller:'departments',
+                        classname: department.classname,
+                        group_id: @courses.id,
+                        department_id: department.id
+                        ) do%>
+                        <button class="btn-square-little-rich" >追加する</button>
+                    <%end%> 
+                <%end%> 
+            </div>
+            
+        </div>
+      </div>
+    
+    <% end%>
+  </div>
+</div>

@@ -58,6 +58,9 @@ Rails.application.routes.draw do
   get 'courses/:id/destroy_time' => "courses#destroy_time"
 
   get 'courses/:id/:held_day' => "courses#show_atend"
+
+  get 'departments/:id/index' => "departments#index"
+  get 'departments/:id/add_department_to_group' => "departments#add_department_to_group"
   
   get '/' => "home#top"
   get 'about' => "home#about"

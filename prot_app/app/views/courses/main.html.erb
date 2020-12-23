@@ -9,7 +9,7 @@
                             <%= link_to("keyword設定","/courses/#{@courses.id}/edit_keyword",:style=>"font-size: x-large;")%>
                         </p>
                         <p>
-                            <%= link_to("出席状況","/users/atend_subject",:style=>"font-size: x-large;")%>
+                            <%= link_to("クラスまとめて追加","/departments/#{@courses.id}/index",:style=>"font-size: x-large;")%>
                         </p>
                         <p>
                             <%= link_to("メンバーを追加","/courses/#{@courses.id}/edit_member",:style=>"font-size: x-large;")%>

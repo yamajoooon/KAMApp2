@@ -7,7 +7,7 @@
       <div class="courses-index-item">
         <div class="couese-right">
           
-            <%= "#{user.GID}"+ " " + "#{user.name}"%>
+            <%= "#{user.GID}"+ " " + "#{user.classname}"+ " "+ "#{user.name}"%>
             <div class = 'botton-position'>
                 <%if @add_user_to_groups.include?(user.id)%>
                     <p class = "sign-up-color">登録済み</p>

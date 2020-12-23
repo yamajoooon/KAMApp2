@@ -76,7 +76,7 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       classname: params[:classname],
-      GID: params[:GID], 
+      GID: params[:GID],
       password: params[:password],
     )
     if @users.save
