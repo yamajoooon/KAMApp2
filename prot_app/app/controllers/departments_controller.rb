@@ -1,5 +1,7 @@
 class DepartmentsController < ApplicationController
 
+    before_action :set_current_user
+    
     def index
 
         @department_index = Department.all.order(created_at: :desc)
